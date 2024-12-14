@@ -1,0 +1,6 @@
+p   {
+    cursor:url('icon.png'), default;
+}
+:root{
+    --icone: url(icon.png)
+}

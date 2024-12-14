@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body{
+            background-color: rgb(121, 121, 190);
+            font: normal 1em arial, sans-serif;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>iniciando estudos com DOM</h1>
+    <p id="p1">resultado</p>
+    <p>aprendendo a usar <strong>DOM</strong></p>
+    <div class="d"><a href="pag.html">clique em mim</a></div>
+    <script>
+        var p2 = document.getElementsByTagName('p')[1] 
+            document.write(p2.innerHTML)
+
+        //var msg = document.getElementsByClassName('d')[0]
+            //msg.style.backgroundColor = 'black'
+
+        //var msg = document.getElementById('')
+        
+        var p1 = document.querySelector('p#p1') //a seleção do elemento é feita igual no css com # indicando id
+        p1.style.backgroundColor = 'green'
+    </script>
+</body>
+</html>
