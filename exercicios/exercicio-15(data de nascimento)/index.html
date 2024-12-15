@@ -5,21 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <header>
      <h1>Titulo</h1>
     </header>
-    <section>
+    <section id="section">
         <div>
-            <p>#</p>
+            <p>
+                Ano de Nascimento:
+                <input type="number" name="born-date" id="born-date">
+            </p>
+            <br>
+            <p>
+                Sexo:
+                <input type="radio" name="rsex" id="masc" checked>
+                <label for="masc">Masculino</label>
+                <input type="radio" name="rsex" id="fem">
+                <label for="fem">Feminino</label>
+                <p>
+                    <input type="button" value="Verificar" onclick="clicar()">
+                </p>
+            </p> 
         </div>
-        <div>
-            <p>#</p>
+        <div class="resposta">
+            <p id="res">Preencha os campos acima para obter um resultado</p>
         </div>
     </section>
     <footer>
     </footer>
-    
+    <script src="script.js"></script>
 </body>
 </html>
