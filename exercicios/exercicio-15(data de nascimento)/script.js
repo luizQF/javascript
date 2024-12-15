@@ -4,7 +4,7 @@ function clicar(){//a função não pode ter o mesmo nome da ação
     var nasceu = document.querySelector('#born-date')
     var res = document.querySelector('#res')
     
-    if (nasceu.value.length == 0 || nasceu.value > ano){
+    if (nasceu.value.length == 0 || nasceu.value > ano || nasceu.value <= 1900){
         alert('[ERROR] Verifique os dados e tente novamente.')    
     }else {
         var idade = ano - nasceu.value
@@ -33,7 +33,7 @@ function clicar(){//a função não pode ter o mesmo nome da ação
             }else if(idade < 50){
                 img.setAttribute('src', 'imagens/mulher.jpg')
             }else{
-                img.setAttribute('src', 'imagens/idoso.jpg')
+                img.setAttribute('src', 'imagens/idosa.jpg')
             }
         }
         
