@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    height: 98vh;
+    text-align: center;
+}
+section{
+    background-color: #4e4ebe;
+    height: 70vh;
+    color: white;
+    text-align: justify;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.499);
+    width: 50%;
+}
+h1{
+    margin: 10px;
+}
+div{
+    padding: 15px;
+}
+input{
+    display: inline-block;
+    margin: 15px;
+}
+select{
+    width: 200px;
+}
+option{
+    display: block;
+}

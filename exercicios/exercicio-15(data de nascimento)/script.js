@@ -41,5 +41,5 @@ function clicar(){//a função não pode ter o mesmo nome da ação
         res.appendChild(img)//reproduz a imagem abaixo da var res
         res.style.textAlign = 'center'
     }
-   
+
 }
