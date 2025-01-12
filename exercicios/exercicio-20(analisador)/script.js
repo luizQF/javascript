@@ -1,64 +1,80 @@
-let valores = []
-//LIMITE DE 1 A 100 
-function Limit(){
-    let inp1 = document.getElementById('txtn')
-    if(inp1.value < 1 || inp1.value > 100){
-        return true
+let armazenar = []
+function inlist(n, l){
+    if(l.indexOf(Number(n)) != -1){
+        return true //está na lista
     }else{
-        return false
+        return false //não esta na lista
     }
 }
-//ADICIONAR ELEMENTOS
 function adicionar(){
-    let inp1 = document.getElementById('txtn')
-    if(inp1.value.length == 0 || Limit(inp1.value)){
-        alert('[ERRO] Insira um numero de 1 a 100')
+    let inp = document.querySelector('#input')
+    let inpValue = Number(inp.value) 
+    if(inpValue <= 0 || inpValue > 100|| isNaN(inpValue)){
+        alert('[ERRO] Insira um número entre 1 e 100')
+    }else if(inlist(inp.value, armazenar)){
+        alert('[ERRO] o valor ja foi adicionado')
     }else{
-        let valor = Number(inp1.value)
+        //Criando elemento option
         let opt = document.createElement('option')
-        valores.push(valor)
-        let select = document.querySelector('#tab')
-        opt.innerHTML = `O valor ${valor} foi adicionado`
-        select.appendChild(opt)
+        let selector = document.querySelector('#selecter')
+        //Definindo o conteudo para option
+        opt.innerHTML = `Valor ${inpValue} foi adicionado`
+        selector.appendChild(opt)
+        //Salvando os valores
+        armazenar.push(inpValue) 
     }
 }
-//CALCULA O MENOR NÚMERO
-function menor(){
-    let menor1 = valores[0]
-    for(let i = 1; i < valores.length; i++){
-        if(valores[i] < menor1){
-            menor1 = valores[i]
-        }
-    }
-    return menor1
-}
-//CALCULA O MAIOR NÚMERO
-function maior(){
-    let maior1 = valores[0]
-    for(let i = 1; i < valores.length; i++){
-        if(valores[i] > maior1){
-            maior1 = valores[i]
-        }
-    }
-    return maior1
-}
-//CALCULA A MEDIA DOS VALORES
+//Media entre os números
 function media(){
-    let m = 0
-    for(let i = 1; i < valores.length; i++){
-        m += valores[i]
+    var soma = 0
+    for(let i = 0; i < armazenar.length; i++){
+        soma += armazenar[i]
     }
-    return m / valores.length
+    let res = soma / armazenar.length
+    return res.toFixed(1)
+}
+//Maior número
+function maior(){
+    let bigger = armazenar[0]
+    for(let i = 0; i < armazenar.length; i++){
+        if(armazenar[i] > bigger){
+            bigger = armazenar[i]
+        }
+    }
+    return bigger
+}
+//Menor número
+function menor(n){
+    let smaller = armazenar[0]
+    for(let i = 0; i < armazenar.length; i++){
+        if(smaller > armazenar[i]){
+            smaller = armazenar[i]
+        }
+    }
+    return  smaller
+}
+function finalizar(){
+    if(armazenar.length == 0){
+        alert('Insira os valores antes')
+    }else{
+        var p1 = document.querySelector('#p1')
+        var p2 = document.querySelector('#p2')
+        var p3 = document.querySelector('#p3')
+        var p4 = document.querySelector('#p4')
+        p1.innerHTML = `Você adicionou ${armazenar.length} números`
+        p2.innerHTML = `o Maior número é ${maior()}`
+        p3.innerHTML = `o Menor número é ${menor()}`
+        p4.innerHTML = `a Media entre os números é ${media()}`
+    }
+}
+function limpar(){
+    p1.innerHTML = ''
+    p2.innerHTML = ''
+    p3.innerHTML = ''
+    p4.innerHTML = ''
+    armazenar = []
+    let selector = document.querySelector('#selecter')
+    selector.innerHTML = ''
 }
 
-//FINALIZA
-function finalizar(){
-    let p1 = document.querySelector('#me1')
-    let p2 = document.querySelector('#ma1')
-    let p3 = document.querySelector('#media')
-    let p4 = document.querySelector('#total')
-    p1.innerHTML = `O menor valor é ${menor(valores)}`
-    p2.innerHTML = `O maior valor é ${maior(valores)}`
-    p3.innerHTML = `A media dos valores é ${media(valores)}`
-    p4.innerHTML = `${valores.length} valores foram registrados`
-}
+

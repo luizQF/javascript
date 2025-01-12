@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora | LUIZ FELIPE QUEIROZ FERNANDES</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="box-div">
+        <input type="text" disabled id="resp">
+        <div id="clear" onclick="limpar()">
+            <p>C</p>
+        </div>
+        <div id="buttons">
+            <div class="button" id="9" onclick="adicionarNum('9')">
+                <p>9</p>
+            </div>
+            <div class="button" id="8"  onclick="adicionarNum('8')">
+                <p>8</p>
+            </div>
+            <div class="button" id="7" onclick="adicionarNum('7')">
+                <p>7</p>
+            </div>
+            <div class="button" style="background-color: #030406;" id="/" onclick="adicionarOP('/')">
+                <p>/</p>
+            </div>
+            <div class="button" id="6" onclick="adicionarNum('6')">
+                <p>6</p>
+            </div>
+            <div class="button" id="5" onclick="adicionarNum('5')">
+                <p>5</p>
+            </div>
+            <div class="button" id="4" onclick="adicionarNum('4')">
+                <p>4</p>
+            </div>
+            <div class="button" style="background-color: #030406;" id="*" onclick="adicionarOP('*')">
+                <p>*</p>
+            </div>
+            <div class="button" id="3" onclick="adicionarNum('3')">
+                <p>3</p>
+            </div>
+            <div class="button" id="2" onclick="adicionarNum('2')">
+                <p>2</p>
+            </div>
+            <div class="button" id="1" onclick="adicionarNum('1')">
+                <p>1</p>
+            </div>
+            <div class="button" style="background-color: #030406;" id="+" onclick="adicionarOP('+')">
+                <p>+</p>
+            </div>
+            <div class="button" id="0" onclick="adicionarNum('0')">
+                <p>0</p>
+            </div>
+            <div class="button" id="." onclick="adicionarNum('.')">
+                <p>.</p>
+            </div>
+            <div class="button" style="background-color: #030406;" id="=" onclick="calc()">
+                <p>=</p>
+            </div>
+            <div class="button" style="background-color: #030406;" id="-" onclick="adicionarOP('-')">
+                <p>-</p>
+            </div>
+            <output id="saida"></output>
+        </div>
+    </div>
+    <script>
+        var displayV = document.querySelector('#resp')
+        let currentDisplay = ''
+        function adicionarNum(n){
+            displayV.value += n
+            currentDisplay += n
+        }
+        function adicionarOP(op){
+            if(displayV.value !== '' && !['+', '-', '/','*'].includes(currentDisplay.slice(-1))){
+                /*includes.(currentDisplay.slice(-1) verifica se o ultimo caractere adicionado ao display foi um desses elementos.
+                ![] os elementos q podem ser inclusos. A forma de ler é: se tiver algo no display e o ultimo item incluso n foi [- + / *] adicionar o elemento*/
+                displayV.value += op
+                currentDisplay += op
+            }
+        }
+        function calc(){
+            if(!['+', '-', '*', '/'].includes(currentDisplay.slice(-1))){
+                try{//tenta realizar o bloco
+                let respo = eval(currentDisplay)//Trata a string como código. Se o currentdisplay for (1+1) ele trata como equação matematica
+                displayV.value = respo //Exibindo o resultado no display
+                currentDisplay = respo//Atualizando o armazenamento dos números
+                }catch{//se n for possivel exibe erro na tela
+                    displayV = 'ERROR'
+                }
+            }else{
+                displayV.value = 'ERROR'
+            }
+        }
+        function limpar(){
+            displayV.value = ''
+            currentDisplay = ''
+        }
+    </script>
+</body>
+</html>

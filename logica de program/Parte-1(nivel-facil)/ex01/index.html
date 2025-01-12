@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troca de valores</title>
+    <style>
+        header{
+            text-align: center;
+            background-color: gold;
+            padding: 15px;
+            border-radius: 20px;
+            color: white;
+            font: normal 1em Arial, Helvetica, sans-serif;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.512);
+        }
+        nav#box-nav{
+            background-color: rgba(0, 0, 0, 0.427);
+            width: 400px;
+            height: 300px;
+            padding: 20px;
+            color: white;
+            margin-top: 20px;
+            text-align: center;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: Arial, Helvetica, sans-serif
+        }
+        
+        input{
+            margin: 10px;
+        }
+        input.inp-n{
+            padding: 10px;
+            width: 120px;
+            outline: none;
+            border-radius: 10px;
+            border: none;
+        }
+        input#botao{
+            cursor: pointer;
+            background-color: rgb(77, 77, 77);
+            color: white;
+        }
+        #botao:hover{
+            background-color: rgb(108, 108, 108);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Exercicio #01</h1>
+    </header>
+    <main id="main-container">
+        <nav id="box-nav">
+            <p>
+                Troque o valor da var 'A' pela 'B' e vice-versa
+            </p>
+            <div id="input-AB">
+                <label for="num1">Var A:</label>
+                    <input type="number" name="num1" id="num1" class="inp-n" required placeholder="Digite um valor...">
+                <br>
+                <label for="num2">Var B:</label>
+                    <input type="number" name="num2" id="num2" class="inp-n" required placeholder="Digite um valor...">
+                <br>
+                <input type="button" value="Enviar" class="inp-n" id="botao" onclick="change()">
+                <br>
+                <output id="saida"></output>
+            </div>
+        </nav>
+    </main>
+    <script>
+        function change(){
+            var a = document.querySelector('#num1').value
+            var b = document.querySelector('#num2').value
+            var c = 0
+            c = a
+            a = b
+            b = c
+            var res = document.querySelector('#saida')
+            res.innerHTML = `O valor A agora é ${a} e o valor de B agora é ${b}`
+        }
+    </script>
+</body>
+</html>

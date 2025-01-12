@@ -15,7 +15,8 @@ section{
     text-align: justify;
     margin: auto;
     border-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.499);
+    box-shadow: 2px 2px 5px #0000007f;
+    width: 80%;
 }
 div{
     padding: 15px;
@@ -23,4 +24,11 @@ div{
 input{
     display: inline-block;
     margin: 15px;
+    padding: 4px;
+}
+#selecter{
+    width: 200px;
+}
+::-webkit-scrollbar{
+    width: 5px;
 }

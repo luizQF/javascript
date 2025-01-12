@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troca de valores</title>
+    <style>
+        body{
+            background-color: cornflowerblue;
+        }
+        header{
+            text-align: center;
+            background-color: gold;
+            padding: 15px;
+            border-radius: 20px;
+            color: white;
+            font: normal 1em Arial, Helvetica, sans-serif;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.512);
+        }
+        nav#box-nav{
+            background-color: rgba(0, 0, 0, 0.427);
+            width: 50%;
+            height: 400px;
+            padding: 20px;
+            color: white;
+            margin-top: 20px;
+            text-align: center;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: Arial, Helvetica, sans-serif;
+            border-radius: 15px;
+        }
+        
+        input{
+            margin: 10px;
+        }
+        input.inp-n{
+            padding: 10px;
+            width: 120px;
+            outline: none;
+            border-radius: 10px;
+            border: none;
+        }
+        input#botao{
+            cursor: pointer;
+            background-color: rgb(65, 110, 192);
+            color: white;
+        }
+        #botao:hover{
+            background-color: rgb(122, 194, 233);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Exercicio #01</h1>
+    </header>
+    <main id="main-container">
+        <nav id="box-nav">
+            <p>
+               Leia 2 números e efetue as 4 operações matemáticas e mostre os resultados
+            </p>
+            <div id="input-AB">
+                <label for="num1">Número 1:</label>
+                    <input type="number" name="num1" id="num1" class="inp-n" required placeholder="Digite um valor...">
+                <br>
+                <label for="num2">Numero 2:</label>
+                    <input type="number" name="num2" id="num2" class="inp-n" required placeholder="Digite um valor...">
+                <br>
+                <input type="radio" name="calctype" id="ad" checked>
+                    <label for="ad">Adição</label>
+
+                <input type="radio" name="calctype" id="sub">
+                    <label for="sub">Subtração</label>
+                <br>
+                <input type="radio" name="calctype" id="mult">
+                    <label for="mult">Multiplicação</label>
+
+                <input type="radio" name="calctype" id="div">
+                    <label for="div">Divisão</label>
+                <br>
+                <input type="button" value="Enviar" class="inp-n" id="botao" onclick="calc()">
+                <br>
+                <output id="saida"></output>
+            </div>
+        </nav>
+    </main>
+    <script>
+        function calc(){
+            var v1 = document.getElementById('num1').value
+            var v2 = document.getElementById('num2').value
+            var res = document.getElementById('saida')
+            var radio = document.getElementsByName('calcType')
+            
+            if(radio[0].checked){
+                var calc = Number(v1) + Number(v2)
+                }else if(radio[1].checked){
+                var calc = Number(v1) - Number(v2)
+                }else if(radio[2].checked){
+                var calc = Number(v1) * Number(v2)
+                }else if(radio[3].checked){
+                var calc = Number(v1) / Number(v2)
+            }
+                
+                if (radio[3].checked){
+                    res.innerHTML = 'Resultado: ' + calc.toFixed(1)
+                }else{
+                    res.innerHTML = 'Resultado: ' + calc
+                }
+
+        }
+    </script>
+</body>
+</html>
