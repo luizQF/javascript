@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+:root{
+    --fonte-login: "Chewy", Arial, sans-serif;
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family: var(--fonte-login);
+}
+body{
+    height: 100vh;
+    background:  url('../imagens/fundo-login.jpg') no-repeat center center  fixed;
+    background-size: cover;
+}
+
+section#logbox{
+    background-image: linear-gradient(130deg, #eb80eb, #800080);
+    width: 500px; height: 700px;
+    position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+    border-radius: 5%;
+        box-shadow: 2.5px 2.5px 10px #250025;
+}
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    position: absolute; 
+    left: 50%; top: 15%;
+    transform: translateX(-50%);
+    font-size: 3.8em
+}
+p#failLogin{
+    color: rgb(255, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 68%; left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    padding: 15px;
+    background-color: #E8C1C1;
+}
+    strong{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .hidden{
+        display: none;
+    }
+form{
+    position: absolute; 
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%)
+}
+input{
+    font-size: 20px;
+    padding: 10px;
+    margin: 5px;
+    width: 300px;
+    border-radius: 20px;
+    border: none;
+}
+    input#bot{
+        width: 200px;
+        position: absolute;
+        left: 48.6%;
+        transform: translateX(-50%)
+    }
+        input#bot:hover{
+            cursor: pointer;
+        }
