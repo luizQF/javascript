@@ -1,12 +1,11 @@
 let vogais = ['a', 'e', 'i', 'o', 'u']
-function contarVogais(str){
-    let contador = 0
-    str = str.toLowerCase()
-    for(let i = 0; i < str.length; i++){
-        if(vogais.includes(str[i])){
-            contador += 1
-        }
+let contar = 0
+let word = 'super'
+let ventrd = []
+for(let i = 0; i < word.length; i++){
+    if(vogais.includes(word[i])){
+        ventrd.push(word[i])
+        contar++
     }
-    return contador
 }
-console.log(contarVogais('banana'))
+console.log(`a palavra ${word}, possui ${contar} vogais, que são "${ventrd}"`)
